@@ -1,0 +1,527 @@
+/*== Importing some fonts from googles official fonts list ===*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100");
+
+/*=== Resetting all the default settings ===*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/*=== Settings for html ===*/
+html {
+    width: 100%;
+    height: 100%;
+}
+
+/*=== Settings for body ===*/
+body {
+    background: rgb(119, 119, 119);
+    overflow-x: hidden;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    padding: 0;
+    width: 100%;
+}
+
+/*=== Header elements ===*/
+header {
+    width: 100%;
+    padding: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    position: static;
+}
+
+/*=== Logo at the header ===*/
+header .logo {
+    color: #fff;
+}
+
+/*=== Header buttons ===*/
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+}
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+    font-family: "Raleway", sans-serif;
+}
+header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: rgb(10, 10, 10);
+    border-radius: 20px;
+}
+header ul li a:hover,
+header ul li a.active {
+    background: rgb(33, 33, 33);
+    color: rgb(189, 189, 189);
+}
+
+/*=== Theme selector button ===*/
+#theme-select {
+    text-decoration: none;
+    padding: 6px 15px;
+    background-color: rgb(33, 33, 33);
+    border-radius: 20px;
+    color: rgb(189, 189, 189);
+    font-family: "Raleway", sans-serif;
+}
+#theme-select:hover {
+    cursor: pointer;
+}
+#theme-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #4299e1;
+}
+.selector {
+    display: flex;
+    align-items: center;
+}
+
+/*=== Theme change button ===*/
+.button {
+    margin-left: 1vw;
+    height: auto;
+    background: transparent;
+    border: none;
+    width: 0%;
+    font-size: 1em;
+    letter-spacing: 3px;
+}
+
+/*=== button styling ===*/
+.button {
+    --border-right: 3px;
+    --text-stroke-color: rgba(0, 0, 0, 0.6);
+    --animation-color: rgb(36, 36, 36);
+    --fs-size: 1em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+.hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0;
+    inset: 0;
+    object-position: center;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+}
+.button:hover .hover-text {
+    width: 6vw;
+    filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+/*=== Parallax effected elements ===*/
+#text {
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    color: rgb(33, 33, 33);
+    white-space: nowrap;
+    font-size: 15vw;
+    font-family: "Raleway", sans-serif;
+    display: block;
+    z-index: -10;
+}
+#btn {
+    position: absolute;
+    top: 43%;
+    right: 16%;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.8vw 2.5vw;
+    color: rgb(255, 255, 255);
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.354);
+    font-size: 1.5vw;
+    font-family: "Raleway", sans-serif;
+    z-index: -10;
+}
+#btn a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+/*=== Filler section, it is empty* ===*/
+.filler {
+    height: 100vh;
+}
+
+/*=== Information section with some text, guitar image and waves effect ===*/
+.infsec {
+    position: relative;
+    padding-top: 25%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 15%;
+    background: rgb(196, 196, 196);
+    color: rgb(33, 33, 33);
+    z-index: 1000;
+    overflow: visible;
+    font-family: "Raleway", sans-serif;
+}
+.infsec h2 {
+    font-size: 4.5vw;
+    letter-spacing: 0.2vw;
+    margin-bottom: 3%;
+    transition: 0.3s;
+}
+.infsec p {
+    font-size: 2.5vw;
+    margin-bottom: 3%;
+    transition: 0.3s;
+}
+.infsec #guitar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-63%);
+    width: 100%;
+    padding: 0;
+    z-index: -20;
+}
+#guitar img {
+    width: 100%;
+    z-index: -20;
+}
+.grey {
+    position: absolute;
+    transform: translateY(99%);
+    bottom: 0%;
+    width: 100%;
+    left: 0;
+}
+.grey img {
+    width: 100%;
+}
+
+/*=== Section with cards(contains guitar images) and text to each of them ===*/
+.bar {
+    background: #efc91a;
+    width: 100%;
+    height: 110%;
+    position: relative;
+    display: flex;
+    padding-top: 23%;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 2%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.gpic {
+    position: absolute;
+    transition: 0.5s;
+    z-index: 30;
+    width: 10vw;
+    transform: rotate(20deg);
+}
+.cardtexts {
+    font-size: 12vw;
+    color: rgb(241, 241, 241);
+    font-family: "Big Shoulders Display", cursive;
+    transition: 0.5s;
+}
+#cardtext1 {
+    position: absolute;
+    left: -290%;
+    top: 100%;
+}
+#cardtext2 {
+    position: absolute;
+    left: -400%;
+    top: 100%;
+}
+#cardtext3 {
+    position: absolute;
+    left: -510%;
+    top: 100%;
+}
+.cards {
+    transition: transform 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 500px;
+    text-align: center;
+    font-family: arial;
+    background: white;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#cd1:hover > #cardtext1 {
+    display: inherit;
+    opacity: 1;
+    transform: translateX(235%);
+    transition: 0.6s;
+}
+#cd1 {
+    top: 70%;
+}
+#cd1:hover {
+    transform: scale(1.2);
+}
+#cd1:hover > #photo {
+    transform: scale(1.2);
+}
+#cd2:hover > #cardtext2 {
+    display: inherit;
+    opacity: 1;
+    transform: translateX(220%);
+    transition: 0.5s;
+}
+#cd2 {
+    top: 40%;
+    right: 7%;
+}
+#cd2:hover {
+    transform: scale(1.2);
+}
+#cd2:hover > #photo2 {
+    transform: scale(1.2);
+}
+#cd3:hover > #cardtext3 {
+    display: inherit;
+    opacity: 1;
+    transform: translateX(195%);
+    transition: 0.7s;
+}
+#cd3 {
+    top: 252%;
+    left: 38%;
+}
+#cd3:hover {
+    transform: scale(1.2);
+}
+#cd3:hover > #photo3 {
+    transform: scale(1.2);
+}
+
+/*=== Section with background photo, some text and button on it ===*/
+.linking {
+    width: 100%;
+    position: relative;
+}
+.exampleg img {
+    width: 100%;
+    z-index: -20;
+    transition: 0.5s;
+}
+.exampleg img:hover {
+    filter: blur(6px);
+    transition: 0.5s;
+    z-index: -20;
+}
+.topacit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    letter-spacing: 0;
+    height: 100%;
+}
+.tonp {
+    text-transform: uppercase;
+    font-size: 9.85vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    z-index: 10;
+}
+#t1 {
+    color: rgb(239, 201, 26);
+    transform: translateY(-22%);
+}
+#t2 {
+    color: rgba(239, 200, 26, 0.738);
+    transform: translateY(-65%);
+}
+#t3 {
+    color: rgba(239, 200, 26, 0.377);
+    transform: translateY(-108%);
+}
+#t4 {
+    color: rgba(239, 200, 26, 0.377);
+    transform: translateY(-150%);
+}
+#t5 {
+    color: rgba(239, 200, 26, 0.377);
+    transform: translateY(-192%);
+}
+#t6 {
+    color: rgba(239, 200, 26, 0.377);
+    transform: translateY(-234.5%);
+}
+#t7 {
+    color: rgba(239, 200, 26, 0.377);
+    transform: translateY(-275.5%);
+}
+#t8 {
+    color: rgba(239, 200, 26, 0.377);
+    transform: translateY(-318%);
+}
+#t9 {
+    color: rgba(239, 200, 26, 0.377);
+    transform: translateY(-359.5%);
+    /* position: absolute;
+    top: 70%; */
+}
+.butt {
+    position: absolute;
+    top: 43vh;
+    left: 50vw;
+    border: 2px solid currentColor;
+    border-radius: 4vw;
+    color: rgb(239, 201, 26);
+    padding: 1vw 4vw;
+    text-decoration: none;
+    transition: 0.2s transform ease-in-out;
+    will-change: transform;
+    z-index: 1000;
+    transform: rotate(-20deg);
+}
+.butt:hover {
+    background-color: rgb(239, 201, 26);
+    border-radius: 3rem;
+}
+.butt a {
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    font-size: 5vw;
+    color: rgb(239, 239, 239);
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+}
+
+/*=== Footer part with text settings on it ===*/
+footer {
+    width: 100%;
+    background-color: rgb(119, 119, 119);
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    z-index: 100;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+footer p {
+    font-size: 3vw;
+    color: #fff;
+    text-decoration: none;
+}
+footer a {
+    text-decoration: none;
+    color: #efc91a;
+}
+
+/*== Responsive mode on smartphones with max-width 650px ===*/
+@media only screen and (max-width: 650px) {
+    header {
+        flex-direction: column;
+        padding: 15px 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .logo {
+        margin-bottom: 20px;
+    }
+
+    header ul {
+        flex-direction: column;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    #text,
+    #btn {
+        display: none;
+    }
+
+    .filler {
+        height: 60vh;
+    }
+
+    .infsec h2 {
+        font-size: 10vw;
+    }
+
+    .infsec p {
+        font-size: 5vw;
+    }
+
+    .bar {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 1vw;
+        height: 170vh;
+    }
+
+    .cards {
+        width: 55vw;
+        height: 55vw;
+    }
+
+    .gpic {
+        position: absolute;
+        transition: 0.5s;
+        z-index: 30;
+        width: 25vw;
+        transform: rotate(20deg);
+    }
+
+    .linking {
+        height: 50vh;
+    }
+
+    .exampleg img,
+    .exampleg {
+        /* object-fit: fill; */
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .tonp {
+        font-size: 17.05vw;
+    }
+
+    .butt {
+        top: 24vh;
+        left: 60vw;
+    }
+}

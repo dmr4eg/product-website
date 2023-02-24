@@ -1,0 +1,604 @@
+/*== Importing some fonts from googles official fonts list ===*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Wire+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Flamenco&display=swap");
+
+/*=== Resetting all the default settings ===*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*=== Settings for body ===*/
+body {
+    background: rgb(27, 27, 27);
+    overflow-x: hidden;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: #222222;
+    font-family: "Raleway", sans-serif;
+}
+
+/*=== Background image for full page ===*/
+#bg {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/*=== Section with form and its settings in it ===*/
+section {
+    top: 12%;
+    border-radius: 25px;
+    right: 12%;
+    position: absolute;
+    width: 30%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(37, 37, 37, 0.79);
+    z-index: 10;
+}
+.regform {
+    width: 95%;
+    height: 96.5%;
+    margin: 10px auto;
+    background: #fff;
+    border-radius: 2px;
+    padding: 3vw;
+    font-family: "Raleway", sans-serif;
+    border-radius: 20px;
+}
+.regform ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.regform li {
+    position: relative;
+    display: block;
+    padding: 0.9vh;
+    border: 1px solid #dddddd;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+.regform li:last-child {
+    border: none;
+    text-align: center;
+}
+.regform li > label {
+    display: block;
+    float: left;
+    margin-top: -5.5%;
+    background: #ffffff;
+    height: 3vh;
+    color: #616161;
+    font-size: 1vw;
+    overflow: hidden;
+    font-family: "Raleway", sans-serif;
+}
+.regform input[type="text"],
+.regform input[type="date"],
+.regform input[type="datetime"],
+.regform input[type="email"],
+.regform input[type="number"],
+.regform input[type="search"],
+.regform input[type="time"],
+.regform input[type="url"],
+.regform input[type="password"],
+.regform input[type="passcheck"],
+.regform textarea,
+.regform select {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    height: 2.5vh;
+    line-height: 2.5vh;
+    font-size: 1.2vw;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+}
+.regform li > span {
+    background: rgba(37, 37, 37, 0.79);
+    display: block;
+    padding: 3px;
+    margin: 0 -8px -8px -8px;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.8vw;
+    border-radius: 8px;
+}
+.regform input[type="submit"],
+.regform input[type="button"] {
+    background: #efc91a;
+    border: none;
+    padding: 1vh 1.2vw 1vh 1.2vw;
+    border-bottom: 3px solid #222222;
+    border-radius: 12px;
+    color: #000000;
+    font-size: 1.1vw;
+}
+.regform input[type="submit"]:hover,
+.regform input[type="button"]:hover {
+    background: #f5dd75;
+    color: #fff;
+}
+#tooltip {
+    position: absolute;
+    background: rgba(37, 37, 37, 0.316);
+    padding: 0.1vw 0.5vw;
+    margin-left: 2vw;
+    margin-right: -2vw;
+    font-size: 1vw;
+    border-radius: 100%;
+    color: #fff;
+    top: 15%;
+    right: 11.5%;
+}
+#tooltip:before,
+#tooltip:after {
+    position: absolute;
+    content: "";
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+#tooltip:before {
+    border-width: 10px 8px 0 8px;
+    border-style: solid;
+    border-color: rgba(37, 37, 37) transparent transparent transparent;
+    top: -1vh;
+    right: 7%;
+    transform: translateY(20px);
+}
+#tooltip:after {
+    content: attr(data-tooltip);
+    background: rgba(37, 37, 37);
+    width: 14vw;
+    height: 3vw;
+    font-size: 13px;
+    font-weight: 300;
+    top: -8.5vh;
+    right: -13vw;
+    padding: 10px;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    transform: translateY(20px);
+}
+#tooltip:hover::before,
+#tooltip:hover::after {
+    opacity: 1;
+    transform: translateY(-1vh);
+}
+#tooltip2 {
+    position: absolute;
+    background: rgba(37, 37, 37, 0.316);
+    padding: 0.1vw 0.5vw;
+    margin-left: 2vw;
+    margin-right: -2vw;
+    font-size: 1vw;
+    border-radius: 100%;
+    color: #fff;
+    top: 15%;
+    right: 11.5%;
+}
+#tooltip2:before,
+#tooltip2:after {
+    position: absolute;
+    content: "";
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+#tooltip2:before {
+    border-width: 10px 8px 0 8px;
+    border-style: solid;
+    border-color: rgba(37, 37, 37) transparent transparent transparent;
+    top: -1vh;
+    right: 7%;
+    transform: translateY(20px);
+}
+#tooltip2:after {
+    content: attr(data-tooltip);
+    background: rgba(37, 37, 37);
+    width: 14vw;
+    height: 3vw;
+    font-size: 13px;
+    font-weight: 300;
+    top: -8.5vh;
+    right: -13vw;
+    padding: 10px;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    transform: translateY(20px);
+}
+#tooltip2:hover::before,
+#tooltip2:hover::after {
+    opacity: 1;
+    transform: translateY(-1vh);
+}
+#tooltip3 {
+    position: absolute;
+    background: rgba(37, 37, 37, 0.316);
+    padding: 0.1vw 0.5vw;
+    margin-left: 2vw;
+    margin-right: -2vw;
+    font-size: 1vw;
+    border-radius: 100%;
+    color: #fff;
+    top: 15%;
+    right: 11.5%;
+}
+#tooltip3:before,
+#tooltip3:after {
+    position: absolute;
+    content: "";
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+#tooltip3:before {
+    border-width: 10px 8px 0 8px;
+    border-style: solid;
+    border-color: rgba(37, 37, 37) transparent transparent transparent;
+    top: -1vh;
+    right: 7%;
+    transform: translateY(20px);
+}
+#tooltip3:after {
+    content: attr(data-tooltip);
+    background: rgba(37, 37, 37);
+    width: 13vw;
+    height: 2.7vw;
+    font-size: 13px;
+    font-weight: 300;
+    top: -8vh;
+    right: -12vw;
+    padding: 10px;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    transform: translateY(20px);
+}
+#tooltip3:hover::before,
+#tooltip3:hover::after {
+    opacity: 1;
+    transform: translateY(-1vh);
+}
+.inp1,
+.inp2,
+.inp3,
+.inp4,
+.inp5 {
+    position: relative;
+}
+
+/*=== Text on the side of the page with "now!" logo ===*/
+#reg {
+    position: absolute;
+    top: 14vh;
+    left: 3vw;
+    color: #fff;
+    font-size: 13vh;
+    font-weight: 100;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    z-index: 101;
+    transform: rotate(180deg);
+    font-family: "Nunito Sans", sans-serif;
+}
+#log {
+    position: absolute;
+    color: #ffffff;
+    font-size: 7vw;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    z-index: 100;
+    top: 4vh;
+    left: 10vw;
+    font-family: "Josefin Sans", sans-serif;
+    font-style: italic;
+}
+#or {
+    position: absolute;
+    color: #fff;
+    font-size: 3vw;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+    text-transform: uppercase;
+    top: 9vh;
+    left: 5.5vw;
+    z-index: 101;
+    font-family: "Wire One", sans-serif;
+}
+#now {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+    top: 10vh;
+    left: 8vw;
+    z-index: 107;
+    width: 20vw;
+}
+
+/*=== Return to the homepage button ===*/
+#return {
+    position: absolute;
+    top: 85%;
+    left: 7%;
+    color: #ffffff;
+    font-size: 2vw;
+    font-weight: 100;
+    z-index: 105;
+    font-family: "Nunito Sans", sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 6px 15px;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.943);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    z-index: 100;
+}
+#return:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+#return:active {
+    background: rgba(255, 255, 255, 0.5);
+}
+#return:visited {
+    background: rgba(255, 255, 255, 0.5);
+}
+#return:link {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#return:link,
+#return:visited {
+    text-decoration: none;
+}
+
+/*=== Displaying error messages ===*/
+.error {
+    color: red;
+    top: 50.3vh;
+    right: -5.5vw;
+    background: rgb(255, 255, 255, 1);
+    padding: 2px;
+    width: 13vw;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 1vw;
+    transform: translate(5vw, -2vw);
+    border-radius: 5px;
+}
+
+/*=== Text on the bottom part of the form ===*/
+.account {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+#acc {
+    z-index: 111;
+    position: absolute;
+    top: 81.5vh;
+    left: 65vw;
+    font-size: 1vw;
+    font-style: italic;
+    color: #6e6e6e8f;
+    font-family: "Raleway", sans-serif;
+}
+#si {
+    z-index: 111;
+    position: absolute;
+    top: 81.5vh;
+    left: 77.5vw;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #efc91a;
+    font-family: "Raleway", sans-serif;
+    /* text-shadow: 1px 1px 1px rgb(127, 127, 127); */
+    transition: all 0.4s;
+}
+#si:hover {
+    color: #3c3b38;
+    transition: all 0.4s;
+}
+
+/* Screen type for smartphones */
+@media only screen and (max-width: 650px) {
+    aside #reg {
+        writing-mode: horizontal-tb;
+        transform: rotate(0deg);
+        left: 9vw;
+        font-size: 3em;
+        top: 7vh;
+    }
+
+    aside #or {
+        top: 4vh;
+        left: 76vw;
+    }
+
+    aside #log {
+        top: 2vh;
+        left: 23vw;
+        font-size: 4em;
+    }
+
+    aside #now {
+        width: 40vw;
+        left: 57.5vw;
+        top: 5vh;
+        transform: rotate(-20deg);
+    }
+
+    #bg {
+        display: none;
+    }
+
+    body {
+        background-color: rgb(60, 60, 60);
+    }
+
+    section {
+        left: 10vw;
+        width: 80vw;
+        top: 19vh;
+    }
+
+    .regform {
+        padding: 2vw;
+        width: 100%;
+        height: 100%;
+    }
+    .regform ul {
+        width: 76vw;
+        padding: 2vw;
+    }
+
+    #acc {
+        left: 18vw;
+        top: 80vh;
+        font-size: 1em;
+    }
+
+    #si {
+        left: 65vw;
+        top: 80vh;
+        font-size: 1.1em;
+    }
+
+    .error {
+        top: 7.4vh;
+        /* left: 40vw; */
+    }
+
+    .error2 {
+        top: 17.1vh;
+    }
+
+    .regform li > label {
+        font-size: 3vw;
+    }
+
+    .regform li > span {
+        font-size: 2.8vw;
+    }
+
+    .regform input[type="text"],
+    .regform input[type="date"],
+    .regform input[type="datetime"],
+    .regform input[type="email"],
+    .regform input[type="number"],
+    .regform input[type="search"],
+    .regform input[type="time"],
+    .regform input[type="url"],
+    .regform input[type="password"],
+    .regform input[type="passcheck"],
+    .regform textarea,
+    .regform select {
+        font-size: 4.2vw;
+    }
+
+    .regform input[type="submit"],
+    .regform input[type="button"] {
+        font-size: 4.1vw;
+    }
+
+    #tooltip,
+    #tooltip2,
+    #tooltip3 {
+        position: absolute;
+        background: rgba(37, 37, 37, 0.316);
+        padding: 1vw 2.3vw;
+        margin-left: 2vw;
+        margin-right: -2vw;
+        font-size: 4vw;
+        border-radius: 100%;
+        color: #fff;
+        top: 15%;
+        right: 7%;
+    }
+
+    #tooltip:after {
+        content: attr(data-tooltip);
+        background: rgba(37, 37, 37);
+        width: 28vw;
+        height: 16vw;
+        font-size: 13px;
+        font-weight: 300;
+        top: -10.5vh;
+        right: -5vw;
+        padding: 10px;
+        border-radius: 15px;
+        letter-spacing: 1px;
+    }
+
+    #tooltip2:after {
+        content: attr(data-tooltip);
+        background: rgba(37, 37, 37);
+        width: 28vw;
+        height: 16vw;
+        font-size: 13px;
+        font-weight: 300;
+        top: -10.5vh;
+        right: -5vw;
+        padding: 10px;
+        border-radius: 15px;
+        letter-spacing: 1px;
+    }
+
+    #tooltip3:after {
+        content: attr(data-tooltip);
+        background: rgba(37, 37, 37);
+        width: 28vw;
+        height: 16vw;
+        font-size: 13px;
+        font-weight: 300;
+        top: -10.5vh;
+        right: -5vw;
+        padding: 10px;
+        border-radius: 15px;
+        letter-spacing: 1px;
+    }
+
+    #return {
+        top: 92vh;
+        left: 20vw;
+        font-size: 5vw;
+    }
+}

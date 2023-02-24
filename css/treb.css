@@ -1,0 +1,121 @@
+/*== Importing some fonts from googles official fonts list ===*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Wire+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Flamenco&display=swap");
+
+/*=== Resetting all the default settings ===*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*=== Settings for body ===*/
+body {
+    background: rgb(27, 27, 27);
+    overflow-x: hidden;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    width: 100%;
+    height: 100%;
+}
+
+/*=== Main section ===*/
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*=== Background image for full page ===*/
+#backg {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    filter: blur(6px);
+}
+
+/*=== Text on the center of the page ===*/
+h1 {
+    display: flex;
+    font-size: 5vw;
+    z-index: 10;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 35%;
+    text-align: center;
+    color: #efc91a;
+}
+
+/*=== Button on the center of the page ===*/
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2vw;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    top: 33vw;
+}
+.button:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #efc91a;
+    border-radius: 10rem;
+    z-index: -2;
+}
+.button:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #988013;
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+}
+.button:hover {
+    color: #fff;
+}
+.button:hover:before {
+    width: 100%;
+}
+.main a {
+    text-decoration: none;
+}
+
+/*== Responsive mode on smartphones with max-width 650px ===*/
+@media only screen and (max-width: 650px) {
+    .button {
+        font-size: 8vw;
+        top: 56vw;
+    }
+
+    h1 {
+        font-size: 13vw;
+    }
+}
